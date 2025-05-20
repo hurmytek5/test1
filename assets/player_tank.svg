@@ -1,0 +1,8 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tank Body -->
+  <rect x="10" y="10" width="30" height="30" fill="green" stroke="black" stroke-width="1"/>
+  <!-- Tank Turret -->
+  <rect x="20" y="5" width="10" height="20" fill="darkgreen" stroke="black" stroke-width="1"/>
+  <!-- Small circle on body -->
+  <circle cx="25" cy="25" r="5" fill="lightgreen" />
+</svg>
