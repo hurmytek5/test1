@@ -220,6 +220,14 @@ class GameScene extends Phaser.Scene {
 
             this.score += 10;
             this.scoreText.setText('Score: ' + this.score);
+
+            // Check if all enemies in GameScene are defeated
+            if (this.enemies.countActive(true) === 0 && !this.isGameOver) {
+                this.isGameOver = true; // Pause updates in GameScene
+                
+                // Transition to GameScene2
+                this.scene.start('GameScene2', { score: this.score, level: 2 });
+            }
         }
     }
 
@@ -335,6 +343,7 @@ const ROTATION_SPEED = 5; // degrees per frame (corrected from previous thought 
 const BULLET_SPEED = 600; // pixels per second
 const BULLET_OFFSET = 30; // pixels from tank center
 const NUM_ENEMIES = 5;
+const NUM_ENEMIES_LEVEL2 = 8; // More enemies for level 2
 const ENEMY_SPEED = 50; // pixels per second
 const ENEMY_FIRE_RATE = 3000; // milliseconds
 const ENEMY_BULLET_SPEED = 250; // pixels per second
